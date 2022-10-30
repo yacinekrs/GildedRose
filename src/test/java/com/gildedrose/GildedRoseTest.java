@@ -188,15 +188,43 @@ class GildedRoseTest {
 
   /************************CONJURED************************/
 
-  // @Test
-  // @DisplayName("Conjured")
-  // void testconjuredsup() {
-  //   Item element = new Item("Conjured", 1, 6);
-  //   GildedRose app = new GildedRose(new Item[] {element});
-  //   app.updateQuality();
-  //   assertThat(element.quality, is(4));
-  //   // assertThat(element.sellIn, is(-1));
-  // }
+  @Test
+  @DisplayName("Conjured")
+  void testconjuredsup() {
+    Item element = new Item("Conjured", 1, 6);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertThat(element.quality, is(4));
+    // assertThat(element.sellIn, is(-1));
+  }
+
+  @Test
+  @DisplayName("Conjured")
+  void testconjuredinf() {
+    Item element = new Item("Conjured", 0, 6);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertThat(element.quality, is(2));
+    // assertThat(element.sellIn, is(-1));
+    }
+
+  /************************************ MUTATION APRES refctrng ***********************************/
+  @Test
+  void testmutationqltAgdBref() {
+    Item element = new Item("Aged Brie", 1, 40);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertThat(element.quality, is(41));
+    assertThat(element.sellIn, is(0));
+  }
+  @Test
+      void testyacineref() {
+      Item element = new Item("yacine", 1, 4);
+      GildedRose app = new GildedRose(new Item[] {element});
+      app.updateQuality();
+      assertThat(element.sellIn, is(0));
+      assertThat(element.quality, is(3));
+    } 
 
 
 
