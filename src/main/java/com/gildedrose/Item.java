@@ -18,21 +18,21 @@ public class Item {
    public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
-    
+
     public void updateQuality(){
         if (this.name.equals("Sulfuras, Hand of Ragnaros")){
             return;
         }
 
-        this.sellIn --;
+        this.sellIn -- ;
         switch (this.name) {
             case "Aged Brie":
-                this.quality ++;
+                this.quality ++ ;
                 if (this.sellIn < 0) {
                     this.quality ++;
-                }   
+                }
                 break;
-
+            
             case "Backstage passes to a TAFKAL80ETC concert":
                 this.quality ++ ;
                 if (this.sellIn < 10) {
@@ -43,9 +43,9 @@ public class Item {
                 }
                 if (this.sellIn < 0) {
                     this.quality = 0;
-                }   
+                }
                 break;
-
+            
             case "Conjured":
                 if(this.sellIn >= 0){
                     this.quality-= 2;
@@ -54,7 +54,6 @@ public class Item {
                     this.quality-= 4;
                 }
                 break;
-        
             default:
                 this.quality--;
                 if (this.sellIn < 0) {

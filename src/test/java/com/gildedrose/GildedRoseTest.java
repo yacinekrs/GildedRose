@@ -46,36 +46,8 @@ class GildedRoseTest {
     assertThat(element.sellIn, is(6));
     assertThat(element.quality, is(6));
   }
-  @Test
-  @DisplayName("Test quality et sellin avec aged Brie et le sellin sup a 0")/* */
-  void testAgedBqualsup50() {
-    Item element = new Item("Aged Brie", 7, 51);
-    GildedRose app = new GildedRose(new Item[] {element});
-    app.updateQuality();
-    assertThat(element.sellIn, is(6));
-    assertThat(element.quality, is(51));
-  }
 
-  @Test
-  @DisplayName("Test quality et sellin avec aged Brie et le sellin sup a 0")/* */
-  void testAgedBsellinf0qualsup50() {
-    Item element = new Item("Aged Brie", 0, 51);
-    GildedRose app = new GildedRose(new Item[] {element});
-    app.updateQuality();
-    assertThat(element.sellIn, is(-1));
-    assertThat(element.quality, is(51));
-  }
 
-  @Test
-  @DisplayName("Test quality et sellin avec aged Brie et le sellin devient inf a 0")
-  void testAgedBsellinf0() {
-    Item element = new Item("Aged Brie", 0, 5);
-    GildedRose app = new GildedRose(new Item[] {element});
-    app.updateQuality();
-    assertThat(element.sellIn, is(-1));
-    assertThat(element.quality, is(7));
-
-  }
 
   /************************************ Backstage ***********************************/
   @Test
