@@ -149,6 +149,86 @@ class GildedRoseTest {
     // assertThat(element.sellIn, is(0));
     // assertThat(element.quality, is(0));
   }
+  /************************************ MUTATION ***********************************/
+
+  @Test
+  void testufltd() {
+    Item element = new Item("yacine", 3, 0);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertThat(element.quality, is(0));
+    assertThat(element.sellIn, is(2));
+  }
+
+  @Test
+  void testmutagedbrie() {
+    Item element = new Item("Aged Brie", 3, 50);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertThat(element.quality, is(50));
+    assertThat(element.sellIn, is(2));
+  }
+
+  @Test
+  void testmutationbackstageseelin11() {
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 11, 10);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertThat(element.quality, is(11));
+    assertThat(element.sellIn, is(10));
+  }
+
+  @Test
+    void testBackStagemutationsellin6() {
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 6, 4);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertThat(element.quality, is(6));
+    assertThat(element.sellIn, is(5));
+  }
+
+  @Test
+    void testBackStagemutationsellin0() {
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 1, 4);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertThat(element.quality, is(7));
+    assertThat(element.sellIn, is(0));
+  }
+
+  @Test
+    void testmutationsulfqlt0() {
+    Item element = new Item("yac", 0, 1);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertThat(element.quality, is(0));
+    assertThat(element.sellIn, is(-1));
+  }
+
+  @Test
+    void testmutationqltAgdB() {
+    Item element = new Item("Aged Brie", 0, 50);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertThat(element.quality, is(50));
+    assertThat(element.sellIn, is(-1));
+  }
+
+  /************************CONJURED************************/
+
+  // @Test
+  // @DisplayName("Conjured")
+  // void testconjuredsup() {
+  //   Item element = new Item("Conjured", 1, 6);
+  //   GildedRose app = new GildedRose(new Item[] {element});
+  //   app.updateQuality();
+  //   assertThat(element.quality, is(4));
+  //   // assertThat(element.sellIn, is(-1));
+  // }
+
+
+
+
 
 
 
