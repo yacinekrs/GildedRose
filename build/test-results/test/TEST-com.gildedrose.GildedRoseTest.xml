@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gildedrose.GildedRoseTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-10-30T10:19:49" hostname="LAPTOP-TPJ6UH80" time="0.02">
+<testsuite name="com.gildedrose.GildedRoseTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-10-30T10:24:13" hostname="LAPTOP-TPJ6UH80" time="0.029">
   <properties/>
-  <testcase name="Test quality et sellin avec une biere qui n'existe pas" classname="com.gildedrose.GildedRoseTest" time="0.016"/>
-  <testcase name="Test that the name is unchanged" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="Test quality et sellin avec aged Brie et le sellin devient inf a 0" classname="com.gildedrose.GildedRoseTest" time="0.02"/>
+  <testcase name="Test quality et sellin avec aged Brie et le sellin sup a 0" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="Test quality et sellin avec Backstage et sellin a 5" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="Test quality et sellin avec une biere qui n'existe pas" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="Test quality et sellin avec Backstage et sellin devient inf a 0" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="Test that the name is unchanged" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="Test quality et sellin avec une biere qui n'existe pas avec sellin a 0" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

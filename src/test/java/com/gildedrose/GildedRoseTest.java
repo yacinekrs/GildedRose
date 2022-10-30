@@ -36,5 +36,67 @@ class GildedRoseTest {
     assertThat(element.quality, is(3));
   }
 
+  /************************************ Aged Brie ***********************************/
+  @Test
+  @DisplayName("Test quality et sellin avec aged Brie et le sellin sup a 0")
+  void testAgedBsellsup0() {
+    Item element = new Item("Aged Brie", 7, 5);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertThat(element.sellIn, is(6));
+    assertThat(element.quality, is(6));
+  }
+
+  @Test
+  @DisplayName("Test quality et sellin avec aged Brie et le sellin devient inf a 0")
+  void testAgedBsellinf0() {
+    Item element = new Item("Aged Brie", 0, 5);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertThat(element.sellIn, is(-1));
+    assertThat(element.quality, is(7));
+
+  }
+
+  /************************************ Backstage ***********************************/
+  @Test
+  @DisplayName("Test quality et sellin avec Backstage et sellin a 5")
+  void testBackSsellinf11() {
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 4);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertThat(element.sellIn, is(4));
+    assertThat(element.quality, is(7));
+  }
+
+  @Test
+  @DisplayName("Test quality et sellin avec Backstage et sellin devient inf a 0")
+  void testBack0() {
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 0, 5);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertThat(element.quality, is(0));
+    assertThat(element.sellIn, is(-1));
+  }
+
+  @Test
+  @DisplayName("Test quality et sellin avec Backstage et sellin sup a 10") 
+  void testBacksup10() {
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 20, 49);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertThat(element.quality, is(50));
+    assertThat(element.sellIn, is(19));
+  }
+
+  @Test
+  @DisplayName("Test quality et sellin avec Backstage et sellin devient inf a 3 et quality depasse pas 50") 
+  void testBackSsellinf3() {
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 3, 49);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertThat(element.quality, is(50));
+    assertThat(element.sellIn, is(2));
+  }
 
 }
