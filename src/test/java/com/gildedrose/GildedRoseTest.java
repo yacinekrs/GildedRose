@@ -16,4 +16,25 @@ class GildedRoseTest {
     assertThat(element.sellIn, is(-1));
   }
 
+  @Test
+  @DisplayName("Test quality et sellin avec une biere qui n'existe pas ")
+  void testyacine() {
+    Item element = new Item("yacine", 7, 4);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertThat(element.sellIn, is(6));
+    assertThat(element.quality, is(3));
+  }
+
+  @Test
+  @DisplayName("Test quality et sellin avec une biere qui n'existe pas avec sellin a 0")
+  void testYacsellin() {
+    Item element = new Item("yacine", 0, 5);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertThat(element.sellIn, is(-1));
+    assertThat(element.quality, is(3));
+  }
+
+
 }
