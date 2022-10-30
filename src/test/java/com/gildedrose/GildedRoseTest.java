@@ -46,6 +46,25 @@ class GildedRoseTest {
     assertThat(element.sellIn, is(6));
     assertThat(element.quality, is(6));
   }
+  @Test
+  @DisplayName("Test quality et sellin avec aged Brie et le sellin sup a 0")/* */
+  void testAgedBqualsup50() {
+    Item element = new Item("Aged Brie", 7, 51);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertThat(element.sellIn, is(6));
+    assertThat(element.quality, is(51));
+  }
+
+  @Test
+  @DisplayName("Test quality et sellin avec aged Brie et le sellin sup a 0")/* */
+  void testAgedBsellinf0qualsup50() {
+    Item element = new Item("Aged Brie", 0, 51);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertThat(element.sellIn, is(-1));
+    assertThat(element.quality, is(51));
+  }
 
   @Test
   @DisplayName("Test quality et sellin avec aged Brie et le sellin devient inf a 0")
@@ -108,5 +127,29 @@ class GildedRoseTest {
     assertThat(element.quality, is(5));
     assertThat(element.sellIn, is(12));
   }
+
+  @Test
+  @DisplayName("Sulfuras") 
+  void testSulfinf0() {
+    Item element = new Item("Sulfuras, Hand of Ragnaros", -3, 5);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertThat(element.quality, is(5));
+    assertThat(element.sellIn, is(-3));
+  }
+
+  /************************************ ToString ***********************************/
+  
+  @Test 
+  @DisplayName("Afficher les caractéristiques du produit")
+  void testToString() {
+    Item element = new Item("blueMoon", 0, 0);
+    assertThat(element.toString(), is("blueMoon, 0, 0"));
+    // element.name, is(());
+    // assertThat(element.sellIn, is(0));
+    // assertThat(element.quality, is(0));
+  }
+
+
 
 }
