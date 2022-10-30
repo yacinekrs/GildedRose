@@ -98,5 +98,15 @@ class GildedRoseTest {
     assertThat(element.quality, is(50));
     assertThat(element.sellIn, is(2));
   }
+  /************************************ Sulfuras ***********************************/
+  @Test
+  @DisplayName("Sulfuras") 
+  void testSulf() {
+    Item element = new Item("Sulfuras, Hand of Ragnaros", 12, 5);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertThat(element.quality, is(5));
+    assertThat(element.sellIn, is(12));
+  }
 
 }
