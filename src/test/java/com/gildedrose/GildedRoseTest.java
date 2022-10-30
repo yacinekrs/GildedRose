@@ -12,7 +12,8 @@ class GildedRoseTest {
     Item element = new Item("foo", 0, 0);
     GildedRose app = new GildedRose(new Item[] {element});
     app.updateQuality();
-    assertThat(element.name, is("FIXME"));
+    assertThat(element.name, is("foo"));
+    assertThat(element.sellIn, is(-1));
   }
 
 }
